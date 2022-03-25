@@ -50,6 +50,7 @@ stages:
       displayName: deployK8S
       inputs:
         action: deploy
+        kubernetesServiceConnection: k8s-connection
         namespace: "default"
         containers: |
           anantaguha.azurecr.io/springazuredemo:latest
