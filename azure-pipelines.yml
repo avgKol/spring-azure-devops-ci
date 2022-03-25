@@ -46,6 +46,13 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    
+    - task: KubernetesManifest@0
+      displayName: Create imagePullSecret
+      inputs:
+        action: createSecret
+        secretName: $(imagePullSecret)
+        dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
     - task: KubernetesManifest@0
       displayName: deployK8S
       inputs:
@@ -56,3 +63,4 @@ stages:
           anantaguha.azurecr.io/springazuredemo:latest
         manifests: |
            $(Build.SourcesDirectory)/manifests/deployment.yml
+        imagePullSecrets: $(imagePullSecret)
