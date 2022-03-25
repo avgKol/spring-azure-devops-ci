@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c1a4b0b1-bbda-4066-810a-a3b646af911f'
+  dockerRegistryServiceConnection: 'acr-connection'
   imageRepository: 'springazuredemo'
-  containerRegistry: 'ritresh.azurecr.io'
+  containerRegistry: 'anantaguha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/microservice1/Dockerfile'
   tag: '$(Build.BuildId)'
   
