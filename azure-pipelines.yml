@@ -55,4 +55,4 @@ stages:
         containers: |
           anantaguha.azurecr.io/springazuredemo:latest
         manifests: |
-           $(Pipeline.Workspace)/manifests/deployment.yml
+           $(Build.SourcesDirectory)/manifests/deployment.yml
