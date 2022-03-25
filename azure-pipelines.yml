@@ -53,6 +53,7 @@ stages:
         action: createSecret
         secretName: $(imagePullSecret)
         dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+        kubernetesServiceConnection: k8s-connection
     - task: KubernetesManifest@0
       displayName: deployK8S
       inputs:
