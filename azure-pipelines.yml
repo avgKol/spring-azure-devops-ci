@@ -15,6 +15,7 @@ variables:
   containerRegistry: 'anantaguha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/microservice1/Dockerfile'
   tag: '$(Build.BuildId)'
+  imagePullSecret: 'anantaguhaimgpull-auth'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
