@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
         - name: sbdemo 
-          image: 
+          image: anantaguha.azurecr.io/springazuredemo
           ports:
           - containerPort: 8080
