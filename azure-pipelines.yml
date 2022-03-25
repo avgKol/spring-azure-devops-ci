@@ -46,3 +46,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: KubernetesManifest@0
+      displayName: deployK8S
+      inputs:
+        action: deploy
+        namespace: "default"
+        containers: |
+          anantaguha.azurecr.io/springazuredemo:latest
+        manifests: |
+           $(Pipeline.Workspace)/manifests/deployment.yml
