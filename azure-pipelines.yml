@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'acr-sandbox000'
+  dockerRegistryServiceConnection: 'crcfsandbox'
   imageRepository: 'springazuredemo'
-  containerRegistry: 'anantaguha.azurecr.io'
+  containerRegistry: 'crcfsandbox.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/microservice1/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'anantaguhaimgpull-auth'
