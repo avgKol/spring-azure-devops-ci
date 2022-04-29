@@ -54,12 +54,12 @@ stages:
         action: createSecret
         secretName: $(imagePullSecret)
         dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-        kubernetesServiceConnection: k8s-connection
+        kubernetesServiceConnection: akspoc-rg-it-sandbox-00
     - task: KubernetesManifest@0
       displayName: deployK8S
       inputs:
         action: deploy
-        kubernetesServiceConnection: k8s-connection
+        kubernetesServiceConnection: akspoc-rg-it-sandbox-00
         namespace: "default"
         containers: |
           anantaguha.azurecr.io/springazuredemo:latest
